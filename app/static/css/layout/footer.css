@@ -1,0 +1,99 @@
+/*region items into two columns */
+  .footerItem {
+    width: 50%;
+    padding-left: 2rem;
+  }
+
+  .footerItemRight {
+    float: right;
+    clear: right;
+  }
+/*endregion*/
+
+footer {
+  margin-top: 4rem;
+}
+
+.footerMenu {
+  margin-bottom: 0rem;
+
+  /* container left/right margin removed */
+  margin-left: 0rem;
+  margin-right: 0rem;
+}
+
+.footerMenu ul {
+  margin: 0rem;
+}
+
+/*region footer bottom */
+  /* footer bottom color-ing */
+  .footerBottom {
+    text-align: left;
+    font-size: 1.6rem;
+    font-weight: 200;
+
+    background: rgba(0, 0, 0, .75);
+  }
+
+  /* footer bottom position-ing START */
+  .footerBottom {
+    padding: 2rem 2rem;
+    padding-bottom: 1rem;
+  }
+
+  .footerBottom .container {
+    padding: 0rem;
+  }
+  /* footer bottom position-ing END */
+/*endregion*/
+
+/*region footerBottom text style */
+  .footerBottom, .footerBottom ul > li > a {
+    color: rgba(255, 255, 255, .5);
+    text-decoration: none;
+  }
+
+  .footerBottom ul > li > a:hover {
+    color: rgba(255, 255, 255, .3);
+  }
+/*endregion*/
+
+/*region footerBottom items */
+  .footerBottomItems {
+    padding-left: 0rem;
+    padding-right: 1rem;
+    margin-bottom: 0rem;
+  }
+
+  .footerBottomItems > li {
+    display: inline-block;
+    margin-right: .5rem;
+  }
+/*endregion*/
+
+/*region social-network icons*/
+  .social {
+    padding-left: 0rem;
+    padding-top: .5rem;
+  }
+
+  ul.social li {
+    display: inline-block;
+  }
+
+  ul.social span {
+    display: inline-block;
+    min-width: 30px;
+    min-height: 30px;
+
+    -webkit-transform: scale(.8);
+       -moz-transform: scale(.8);
+        -ms-transform: scale(.8); /* IE 9 */
+         -o-transform: scale(.8);
+            transform: scale(.8);
+
+    cursor: pointer;
+  }
+
+/*endregion*/

@@ -1,0 +1,103 @@
+.menu {
+  border-radius: 0px;
+
+  background-color: rgba(0,0,0,.6);
+  border-color: rgba(0,0,0,.1);
+
+  margin-bottom: 0rem;
+}
+
+.logo {
+  width: 152px;
+  height: 38px;
+
+  margin-top: -1rem;
+}
+
+/*region li list style off*/
+li {
+  display: list-item;
+  list-style: none inside;
+}
+/*endregion*/
+
+/*region item text*/
+  .menuItems>li>a, .menuItemsR>li>a {
+    font-size: 1.8rem;
+    font-weight: 200;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, .95) !important;
+  }
+
+  .menuItems>li>a:hover, .menuItemsR>li>a:hover {
+    color: #9d9d9d !important;
+  }
+/*endregion*/
+
+/*region mobile hamburger menu */
+  .hamburgerMenu, .menuItemsWrapper {
+    border-color: rgba(0, 0, 0, .15) !important;
+  }
+/*endregion*/
+
+/* dropdown-item style @smartphone */
+@media (max-width: 767px) {
+  /* dropdown-item title 's style*/
+  .dropdown-header {
+    color: rgba(255, 255, 255, .5) !important;
+  }
+
+  /* dropdown-item style*/
+  .dropdownItems > li > a {
+    font-size: 1.6rem;
+    font-weight: 200;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, .95) !important;
+  }
+
+  /* item separator */
+  .dropdownItems .divider {
+    background-color: rgba(255,255,255,.1) !important;
+    border-top: 1px solid rgba(0,0,0,.25);
+    height: 2px;
+  }
+}
+
+/* new item style */
+.menuItems .new {
+  background: url(../images/menu-new.png) no-repeat;
+  width: 3rem;
+  height: 1.5rem;
+  background-position: right top;
+  display: inline-block;
+}
+
+/* menuRight margin */
+@media (max-width: 767px) { /* smartphone only */
+  ul.menuItemsR {
+    *margin-left: 0rem;
+    *margin-right: 0rem;
+  }
+}
+
+/*region css tuning when plug in with desktop */
+  .menuItems>li>a, .menuItemsR>li>a {
+    font-size: 17px;
+    font-weight: 200;
+  }
+
+  .navbar-nav li ul.dropdown-menu, .dropdownItems > li > a {
+    font-size: 17px !important;
+  }
+
+  ul.dropdown-menu {
+    padding: .0rem;
+  }
+  ul.dropdown-menu li {
+    padding: .5rem;
+  }
+  ul.dropdown-menu li.divider {
+    padding: 0rem;
+    margin: 0rem;
+  }
+/*endregion css tuning when plug in with desktop */

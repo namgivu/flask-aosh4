@@ -1,0 +1,100 @@
+{#bootstrap-based menu ref. https://getbootstrap.com/examples/navbar/ #}
+
+{% set isLoggedIn = g.loginUser|d(none,True) is not none %}
+
+<nav class="navbar navbar-inverse menu">
+  <div class="container">
+    {# brand and hamburger #}
+    <div class="navbar-header">
+      {# hamburger menu #}
+      <button type="button" class="navbar-toggle collapsed hamburgerMenu"
+              data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      {# brand logo #}
+      <a class="navbar-brand" href="{{ url_for('app_index') }}">
+        <div class="logo">
+          <style>
+            .logo {
+              background-image: url('{{ url_for('static', filename='image/autonomous_logo.png') }}');
+            }
+          </style>
+        </div>
+      </a>
+    </div>
+
+    {# menu items #}
+    <div id="navbar" class="navbar-collapse collapse menuItemsWrapper">
+      {# items #}
+      <ul class="nav navbar-nav menuItems">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            ABBCCC<span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu menuItems">
+            <li>abb</li>
+            <li>ccc</li>
+          </ul>
+        </li>
+      </ul>
+
+      {# items on the right #}
+      <ul class="nav navbar-nav navbar-right menuItemsR">
+        <li class="dropdown">
+
+          {#region Hi user! #}
+
+          {#not logged in -> show Your Account#}
+          {% if not isLoggedIn %}
+            <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              {{ 'Your Account' }} <span class="caret"></span>
+            </a>
+
+          {#logged in#}
+          {% else %}
+            {#get customer firstname#}
+            {% set userFullName = g.loginUser.fullname
+                                 if g.customer.fullname is not none and g.customer.fullname != ''
+                                 else 'Customer' %}
+
+            {#print Hi customer! #}
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Hi, {{ userFullName }} <span class="caret"></span>
+            </a>
+
+          {% endif %}
+          {#endregion Hi user! #}
+
+          {# Account-based actions #}
+          <ul class="dropdown-menu dropdownItems">
+            {#region sign in#}
+            {% if not isLoggedIn %}
+              <li><a href="{{ url_for('auth_sign_in') }}?r={{ request.url }}">
+                Sign in | Sign up
+              </a></li>
+            {% endif %}
+            {#endregion sign in#}
+
+            {#region sign out#}
+            {% if isLoggedIn %}
+              <li role="separator" class="divider"></li>
+              <li><a href="{{ url_for('auth_sign_out') }}?r={{ request.url }}">
+                Sign out
+              </a></li>
+            {% endif %}
+            {#endregion sign out#}
+
+          </ul>
+
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>

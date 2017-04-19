@@ -10,6 +10,8 @@
 
     {#region css files#}
     <link rel='stylesheet' type='text/css' href='{{ url_for('static', filename='3rd-party/bootstrap-3.3.7-dist/css/bootstrap.css') }}'/>
+    <link rel='stylesheet' type='text/css' href='{{ url_for('static', filename='css/layout/nav.css') }}'/>
+    <link rel='stylesheet' type='text/css' href='{{ url_for('static', filename='css/layout/footer.css') }}'/>
     {#endregion css files#}
 
     {#region js files at top#}
@@ -29,7 +31,7 @@
 
   <body>
     {#menu#}
-{#    {% include 'layout/nav.html' %}#}
+    {% include 'layout/nav.html' %}
 
     {#main#}
     <div class="container main">
@@ -37,7 +39,7 @@
     </div>
 
     {#footer#}
-{#    {% include 'layout/footer.html' %}#}
+    {% include 'layout/footer.html' %}
 
     {#region js files at the end#}
     <script src={{ url_for('static', filename='js/jquery-1.12.4-min.js') }}></script>
