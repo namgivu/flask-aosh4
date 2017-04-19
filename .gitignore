@@ -1,3 +1,5 @@
+##region ignore from github
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -87,3 +89,19 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+##endregion ignore from github
+
+##region our Flask app 's ignore
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/misc.xml
+.idea/*.iml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/sqldialects.xml
+.idea/dataSources/
+.idea/dataSources.local.xml
+.idea/dataSources.xml
+.idea/jsLibraryMappings.xml
+##endregion our Flask app 's ignore
