@@ -1,4 +1,14 @@
 {% macro leftHeader_content() %}
+  <div class="hidden closeButton">close</div>
+  <style>
+  .closeButton {
+    background-color: black;
+    color: grey;
+    text-align: right;
+    padding-right: 1rem;
+  }
+  </style>
+
   {% from 'leftHeader/_collapsed.html' import leftHeader_collapsed %}
   {{ leftHeader_collapsed() }}
 

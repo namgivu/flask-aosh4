@@ -1,5 +1,6 @@
 from app import *
 import random
+from flask import session
 
 
 @app.route('/user/switch-role')
@@ -9,10 +10,11 @@ def user_switch_role():
 
 @app.route('/user/dashboard-player')
 def user_dashboard_player():
+  session['userRole'] = app.config['USER_ROLE']['player']
   return render_template('user/dashboard-player.html')
 
 
-@app.route('/user/player')
+@app.route('/user/player/my-board')
 def user_player_my_board():
   days = range(1, 30)
   months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -61,4 +63,5 @@ def user_player_mission_board():
 
 @app.route('/user/dashboard-giver')
 def user_dashboard_giver():
+  session['userRole'] = app.config['USER_ROLE']['giver']
   return render_template('user/dashboard-giver.html')

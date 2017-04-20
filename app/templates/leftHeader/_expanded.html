@@ -1,5 +1,15 @@
 {% macro leftHeader_expanded() %}
-  <div class="bkgimg expandedLH"></div>
+
+  {% from 'leftHeader/_on-going-task.html' import leftHeader_onGoingTask %}
+  {{ leftHeader_onGoingTask(id='00') }}
+  {{ leftHeader_onGoingTask(id='01') }}
+  {{ leftHeader_onGoingTask(id='02') }}
+  {{ leftHeader_onGoingTask(id='03') }}
+  {{ leftHeader_onGoingTask(id='04') }}
+
+
+  {#region wireframe#}
+  <div class="bkgimg expandedLH hidden"></div>
 
   <style>
   .expandedLH {
@@ -7,4 +17,6 @@
     background-color: black;
   }
   </style>
+  {#endregion wireframe#}
+
 {% endmacro %}
