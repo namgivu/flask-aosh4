@@ -1,0 +1,31 @@
+{% extends 'layout/base.html' %}
+
+{% block main %}
+  <div class="intro"></div>
+
+  <style>
+  .intro {
+    background-image: url('{{ url_for('static', filename='image/wireframe/intro.jpg') }}');
+    height: 80%;
+    width: auto;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  {#hide menu & footer#}
+  .menu, .footerBottom {
+    display: none;
+  }
+  </style>
+{% endblock main %}
+
+
+{% block onReadyJs %}
+  <script>
+  $('.intro').click(function() {
+    {#redirect to login page#}
+    window.location.href = '{{ url_for('auth_sign_in') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
+  });
+  </script>
+{% endblock %}
