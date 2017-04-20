@@ -12,8 +12,8 @@
 
 
 {% block rightNav %}
-  {% from 'rightNav/_normal.html' import rightNav_normal %}
-  {{ rightNav_normal() }}
+  {% from 'rightNav/_content.html' import rightNav_normal %}
+  {{ rightNav_normal(userRole='player') }}
 {% endblock %}
 
 
