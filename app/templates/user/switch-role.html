@@ -94,12 +94,22 @@
   <script>
   $('.button.giver').click(function(){
     window.location.href = '{{ url_for('user_dashboard_giver') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
-  })
+  });
+
   $('.button.player').click(function(){
     window.location.href = '{{ url_for('user_dashboard_player') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
-  })
+  });
+
   $('.button.signOut').click(function(){
     window.location.href = '{{ url_for('auth_sign_out') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
-  })
+  });
+
+  $('.button.help').click(function(){
+    window.location.href = '{{ url_for('app_intro') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
+  });
+
+  $('.button.leadingBoard').click(function(){
+    window.location.href = '{{ url_for('statistic_leading_board') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
+  });
   </script>
 {% endblock %}
