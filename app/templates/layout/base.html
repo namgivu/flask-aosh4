@@ -1,0 +1,71 @@
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <title>{{ g.pageTitle }}</title>
+
+    <link rel='icon' href='{{ url_for('static', filename='image/favicon.png') }}'>
+
+    {#region css files#}
+    <link rel='stylesheet' type='text/css' href='{{ url_for('static', filename='3rd-party/bootstrap-3.3.7-dist/css/bootstrap.css') }}'/>
+    <link rel='stylesheet' type='text/css' href='{{ url_for('static', filename='css/common.css') }}'/>
+    {#endregion css files#}
+
+    {#region js files at top#}
+
+    {#
+      HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+      WARNING: Respond.js doesn't work if you view the page via file://
+    #}
+    <!--[if lt IE 9]>
+    <script src='https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js'></script>
+    <script src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js'></script>
+    <![endif]-->
+
+    {#endregion js files at top#}
+
+  </head>
+
+  <body>
+    <div class="container layoutWrapper">
+      <div class="row">
+        {#header on the left#}
+        <div class="col col-xs-1">
+          {% block leftHeader %}
+            <div>leftHeader content</div>
+          {% endblock %}
+        </div>
+
+        {#main in the middle#}
+        <div class="col col-xs-9">
+          {% block main %}
+            <div>main content</div>
+          {% endblock %}
+        </div>
+
+        {#nav on the right#}
+        <div class="col col-xs-2">
+          {% block rightNav %}
+            <div>rightNav content</div>
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .col {
+        padding: 0;
+      }
+    </style>
+
+
+    {#region js files at the end#}
+    <script src={{ url_for('static', filename='js/jquery-1.12.4-min.js') }}></script>
+    <script src={{ url_for('static', filename='3rd-party/bootstrap-3.3.7-dist/js/bootstrap.min.js') }}></script>
+    {% block onReadyJs %}{% endblock %}
+    {#endregion js files at the end#}
+
+  </body>
+</html>
