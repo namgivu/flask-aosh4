@@ -15,5 +15,9 @@ from flask import \
 from werkzeug.utils import redirect
 
 
+#in-app util
+from util import *
+
+
 #route handler/controller
 from controller import *
