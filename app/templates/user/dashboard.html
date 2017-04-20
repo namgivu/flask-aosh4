@@ -1,8 +1,21 @@
 {% extends 'layout/base.html' %}
 
+
+{% block leftHeader %}
+  {% from 'leftHeader/_collapsed.html' import leftHeader_collapsed %}
+  {{ leftHeader_collapsed() }}
+{% endblock %}
+
+
 {% block main %}
   <div class="dashboard">Dashboard page</div>
 {% endblock main %}
+
+
+{% block rightNav %}
+  {% from 'rightNav/_normal.html' import rightNav_normal %}
+  {{ rightNav_normal() }}
+{% endblock %}
 
 
 {% block onReadyJs %}
