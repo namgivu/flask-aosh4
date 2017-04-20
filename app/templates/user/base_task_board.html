@@ -5,48 +5,64 @@
         <div class="row">
             <div>
                 <ul class="event-list">
-                    <li>
-                        <time datetime="2014-07-20" title="Deadline">
-                            <span class="day">4</span>
-                            <span class="month">Jul</span>
-                            <span class="year">2014</span>
-                            <span class="time">ALL DAY</span>
-                        </time>
-                        {#                    <img alt="Independence Day" src="https://farm4.staticflickr.com/3100/2693171833_3545fb852c_q.jpg"/>#}
-                        <div class="info">
-                            <div class="task-info col-md-10">
-                                <div>
-                                    <h2 class="title">Some task here</h2>
-                                    <p class="desc">United States Holiday</p>
+                    {% for data in fake_data %}
+                        <li>
+                            <time datetime="2014-07-20" title="Deadline" style="display: table;">
+                                <div style="display: table-cell; vertical-align: middle">
+                                    <span class="day">{{ data.day }}</span>
+                                    <span class="month">{{ data.month }}</span>
+                                    <span class="year">2014</span>
+                                    <span class="time">ALL DAY</span>
                                 </div>
-                            </div>
-                            <div class="col-md-2 user-info text-right">
-                                <div class="pull-right text-center">
-                                    <div class="avatar">
-                                        <img class="circle img-thumbnail img-box"
-                                             src="{{ url_for('static', filename='image/andy.jpg') }}"
-                                             alt="sintret">
+                            </time>
+                            {#                    <img alt="Independence Day" src="https://farm4.staticflickr.com/3100/2693171833_3545fb852c_q.jpg"/>#}
+                            <div class="info">
+                                <div class="task-info col-md-10">
+                                    <div>
+                                        <h2 class="title"><span>Some task here / Status</span>{% if skill %} /
+                                            {{ skil }}{% endif %}</h2>
+                                        <h3 class="title">{{ data.point }} points</h3>
+                                        <p class="desc">United States Holiday</p>
                                     </div>
-                                    <div class="name">{% block name %}{% endblock %}</div>
                                 </div>
-                            </div>
-                            <div class="clearfix"></div>
+                                <div class="col-md-2 user-info text-right">
+                                    <div class="pull-right text-center">
+                                        <div class="avatar">
+                                            <img class="circle img-thumbnail img-box"
+                                                 src="{{ url_for('static', filename='image/andy.jpg') }}"
+                                                 alt="sintret">
+                                        </div>
+                                        <div class="name">{{ data.name }}</div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
 
-                            <table class="table actions table-bordered"
-                                   style="position:absolute; bottom: 0; margin: 0px;">
-                                <tbody>
-                                <tr>
-                                    <td class="text-center">
-                                        <span class="text-center">Accept</span>
-                                    </td>
-                                    <td class="text-center">
-                                        <span class="text-center">Reject</span>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </li>
+                                <table class="table actions table-bordered"
+                                       style="position:absolute; bottom: 0; margin: 0px;">
+                                    <tbody>
+                                    <tr>
+                                        {% if data.is_received_task %}
+                                            <td class="text-center">
+                                                <span class="text-center">Complete</span>
+                                            </td>
+                                        {% elif data.is_my_task %}
+                                            <td class="text-center">
+                                                <span class="text-center">Accept</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-center">Reject</span>
+                                            </td>
+                                        {% elif data.is_other_task %}
+                                            <td class="text-center">
+                                                <span class="text-center">Take Mission</span>
+                                            </td>
+                                        {% endif %}
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                    {% endfor %}
                     {##}
                     {#                <li>#}
                     {#                    <time datetime="2014-07-20 0000">#}
