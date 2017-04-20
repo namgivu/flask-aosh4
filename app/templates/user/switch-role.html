@@ -1,19 +1,89 @@
 {% extends 'layout/base.html' %}
 
 {% block main %}
-  <div class="bkgimg switch-role"></div>
+  <div class="bkgimg logo"></div>
+
+  <div class="logoBELOW"></div>
+
+  <div class="switchWrapper">
+    <div class="button giver">Giver</div>
+    <div class="or">or</div>
+    <div class="button player">Player</div>
+  </div>
+
+  <div class="switchWrapperBELOW"></div>
+
+  <div class="actionWrapper">
+    <div class="button help">Help</div>
+    <div class="button leadingBoard">Leading Board</div>
+    <div class="button missionBoard">Mission Board</div>
+    <div class="button signOut">sign out</div>
+  </div>
+
+  <div class="bkgimg wireframe hidden"></div>
 
   <style>
-  .switch-role {
-    background-image: url('{{ url_for('static', filename='image/wireframe/switch-role.jpg') }}');
+  .logo {
+    background-image: url('{{ url_for('static', filename='image/logo.png') }}');
+    height: 25px !important;
   }
 
+  .wireframe {
+    background-image: url('{{ url_for('static', filename='image/wireframe/wireframe.jpg') }}');
+  }
+  </style>
+
+
   {#hide left & right content#}
+  <style>
   .leftHeader, .rightNav {
     display: none;
   }
   .main{
     width: 100%;
+  }
+  </style>
+
+
+  {#switching buttons#}
+  <style>
+  .switchWrapper {
+    text-align: center;
+  }
+
+  .switchWrapper div {
+    display: inline-block;
+  }
+  .switchWrapper .button {
+    width: 30%;
+    min-width: 80px;
+  }
+  </style>
+
+
+  {#action buttons#}
+  <style>
+  .actionWrapper {
+    text-align: center;
+  }
+
+  .actionWrapper div {
+    display: inline-block;
+  }
+  .actionWrapper .button {
+    width: 15%;
+    min-width: 40px;
+  }
+  </style>
+
+
+  {#spacing#}
+  <style>
+  .logoBELOW {
+    height: 5rem;
+  }
+  .switchWrapperBELOW {
+    height: 5rem;
   }
   </style>
 
