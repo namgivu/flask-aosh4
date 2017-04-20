@@ -1,22 +1,6 @@
-{% extends 'layout/base.html' %}
-
-{%  block leftHeader %}
-  {% from 'leftHeader/_content.html' import leftHeader_content %}
-  {{ leftHeader_content() }}
-{% endblock %}
-
-
-{% block main %}
-  <div class="dashboard">Dashboard page player</div>
-{% endblock main %}
-
+{% extends 'user/dashboard.html' %}
 
 {% block rightNav %}
   {% from 'rightNav/_content.html' import rightNav_normal %}
   {{ rightNav_normal(userRole='giver') }}
-{% endblock %}
-
-
-{% block onReadyJs %}
-  {% include 'leftHeader/_content.js.html' %}
 {% endblock %}
