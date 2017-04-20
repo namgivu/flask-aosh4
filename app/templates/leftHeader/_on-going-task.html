@@ -1,7 +1,7 @@
-{% macro leftHeader_onGoingTask(id) %}
+{% macro leftHeader_onGoingTask(id, hidden) %}
 
-  <div class="taskId">{{ id }}</div>
-  <div class="bkgimg task"></div>
+  <div class="taskId {{ hidden }}">{{ id }}</div>
+  <div class="bkgimg task {{ hidden }}"></div>
 
   <style>
   .task {
