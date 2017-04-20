@@ -34,8 +34,7 @@
         {#header on the left#}
         <div class="col col-xs-1">
           {% block leftHeader %}
-            {% from 'leftHeader/_collapsed.html' import leftHeader_collapsed %}
-            {{ leftHeader_collapsed() }}
+            <div>leftHeader content</div>
           {% endblock %}
         </div>
 
@@ -49,8 +48,7 @@
         {#nav on the right#}
         <div class="col col-xs-2">
           {% block rightNav %}
-            {% from 'rightNav/_normal.html' import rightNav_normal %}
-            {{ rightNav_normal() }}
+            <div>rightNav content</div>
           {% endblock %}
         </div>
       </div>
