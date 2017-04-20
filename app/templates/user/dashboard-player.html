@@ -1,7 +1,6 @@
 {% extends 'layout/base.html' %}
 
-
-{% block leftHeader %}
+{%  block leftHeader %}
   {% from 'leftHeader/_collapsed.html' import leftHeader_collapsed %}
   {{ leftHeader_collapsed() }}
 
@@ -15,12 +14,15 @@
   .expanded .expandedLH {
     display: block;
   }
+  .expandedLH {
+    display: none;
+  }
   </style>
 {% endblock %}
 
 
 {% block main %}
-  <div class="dashboard">Dashboard page</div>
+  <div class="dashboard">Dashboard page player</div>
 {% endblock main %}
 
 
@@ -31,8 +33,10 @@
 
 
 {% block onReadyJs %}
+
+  {#leftHeader toggle UI-logic#}
   <script>
-  $('.leftHeader').click(function(){
+    $('.leftHeader').click(function(){
     {#switching leftHeader content#}
     $(this).toggleClass('expanded');
 
@@ -42,7 +46,7 @@
       {#main width also effected#}
       $('.main').toggleClass('col-xs-9');
       $('.main').toggleClass('col-xs-7');
-
-  })
+    })
   </script>
+
 {% endblock %}
