@@ -32,23 +32,26 @@
     <div class="container layoutWrapper">
       <div class="row">
         {#header on the left#}
-        <div class="col col-xs-1">
+        <div class="col col-xs-1 leftHeader">
           {% block leftHeader %}
+            {#defautl content, let's overwrite this block in our own view#}
             <div>leftHeader content</div>
           {% endblock %}
         </div>
 
         {#main in the middle#}
-        <div class="col col-xs-9">
+        <div class="col col-xs-9 main">
           {% block main %}
+            {#defautl content, let's overwrite this block in our own view#}
             <div>main content</div>
           {% endblock %}
         </div>
 
         {#nav on the right#}
-        <div class="col col-xs-2">
+        <div class="col col-xs-2 rightNav">
           {% block rightNav %}
-            <div>rightNav content</div>
+            {#defautl content, let's overwrite this block in our own view#}
+              <div>rightNav content</div>
           {% endblock %}
         </div>
       </div>
