@@ -1,6 +1,7 @@
-{% macro rightNav_normal(userRole) %}
+{% macro rightNav_normal(userRole, userRoleREVERSED) %}
   <div class="bkgimg logo"></div>
   <div class="userRole">{{ userRole }}</div>
+  <div class="button switchRole">Switch to {{ userRoleREVERSED }}</div>
 
   <div class="bkgimg normalRN"></div>
 
@@ -20,6 +21,10 @@
 
   .userRole {
     text-transform: uppercase;
+    text-align: center;
+  }
+
+  .button.switchRole {
     text-align: center;
   }
   </style>

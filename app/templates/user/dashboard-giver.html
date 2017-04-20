@@ -2,7 +2,8 @@
 
 {% block rightNav %}
   {% from 'rightNav/_content.html' import rightNav_normal %}
-  {{ rightNav_normal(userRole='giver') }}
+  {{ rightNav_normal(userRole=config['USER_ROLE']['giver'],
+                     userRoleREVERSED=config['USER_ROLE']['player']) }}
 {% endblock %}
 
 
