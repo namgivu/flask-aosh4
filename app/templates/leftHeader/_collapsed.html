@@ -1,0 +1,17 @@
+{% macro leftHeader_collapsed() %}
+  <div class="leftHeader"></div>
+
+  <style>
+  .leftHeader {
+    background-image: url('{{ url_for('static', filename='image/wireframe/leftHeader.png') }}');
+    background-color: black;
+
+    height: 100%;
+    width: auto;
+    background-size: contain;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  </style>
+{% endmacro %}

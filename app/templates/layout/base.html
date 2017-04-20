@@ -34,7 +34,8 @@
         {#header on the left#}
         <div class="col col-xs-1">
           {% block leftHeader %}
-            <div class="leftHeader"></div>
+            {% from 'leftHeader/_collapsed.html' import leftHeader_collapsed %}
+            {{ leftHeader_collapsed() }}
           {% endblock %}
         </div>
 
@@ -65,21 +66,6 @@
       {
         height: 100%;
       }
-    </style>
-
-    {#format leftHeader#}
-    <style>
-    .leftHeader {
-      background-image: url('{{ url_for('static', filename='image/wireframe/leftHeader.png') }}');
-      background-color: black;
-
-      height: 100%;
-      width: auto;
-      background-size: contain;
-
-      background-repeat: no-repeat;
-      background-position: center center;
-    }
     </style>
 
 
