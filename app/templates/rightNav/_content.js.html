@@ -4,3 +4,13 @@
     window.location.href = '{{ url_for('app_index') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
   });
 </script>
+
+{#switch role clicked handler#}
+<script>
+  $('.button.switchRole').click(function(){
+    {% set userRole = session['userRole'] if 'userRole' in session else config['USER_ROLE']['player'] %}
+    {% set userRoleREVERSED = config['USER_ROLE']['player'] if userRole == config['USER_ROLE']['giver'] else config['USER_ROLE']['giver'] %}
+    {% set viewFile = 'user_dashboard_%s' % userRoleREVERSED %}
+    window.location.href = '{{ url_for(viewFile) }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
+  });
+</script>
