@@ -1,16 +1,17 @@
 {% extends 'layout/base.html' %}
 
-{%  block leftHeader %}
-  {% from 'leftHeader/_content.html' import leftHeader_content %}
-  {{ leftHeader_content() }}
+{% block leftHeader %}
+    {% from 'leftHeader/_content.html' import leftHeader_content %}
+    {{ leftHeader_content() }}
 {% endblock %}
 
 
 {% block main %}
-  <div class="dashboard">Dashboard page</div>
+    <div class="dashboard">Dashboard page</div>
 {% endblock main %}
 
 
 {% block onReadyJs %}
-  {% include 'leftHeader/_content.js.html' %}
+    {% include 'leftHeader/_content.js.html' %}
+    <script src={{ url_for('static', filename='js/mission.js') }}></script>
 {% endblock %}

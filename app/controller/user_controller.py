@@ -26,6 +26,7 @@ def user_player_my_board():
   fake_data = []
   for i in range(5):
     data = {
+      'id': i + 1,
       'day': random.choice(days),
       'month': random.choice(months),
       'point': random.choice(points),
@@ -44,6 +45,7 @@ def user_player_mission_board():
   days = range(1, 30)
   months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
   names = ['Anonymous']
+  skills = ['AI', 'Design', 'Video Content', 'Develop', 'Other']
   chars = "abcdefghjiklmnopqrstw"
   for i in range(5):
     names.append(''.join(random.sample(chars,len(chars))))
@@ -51,10 +53,12 @@ def user_player_mission_board():
   fake_data = []
   for i in range(5):
     data = {
+      'id': i + 1,
       'day': random.choice(days),
       'month': random.choice(months),
       'point': random.choice(points),
       'name': random.choice(names)[:9],
+      'skill': random.choice(skills),
       'is_other_task': 1
     }
     fake_data.append(data)

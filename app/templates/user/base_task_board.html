@@ -6,7 +6,7 @@
             <div>
                 <ul class="event-list">
                     {% for data in fake_data %}
-                        <li>
+                        <li class="task" data-id="{{ data.id }}">
                             <time datetime="2014-07-20" title="Deadline" style="display: table;">
                                 <div style="display: table-cell; vertical-align: middle">
                                     <span class="day">{{ data.day }}</span>
@@ -19,8 +19,8 @@
                             <div class="info">
                                 <div class="task-info col-md-10">
                                     <div>
-                                        <h2 class="title"><span>Some task here / Status</span>{% if skill %} /
-                                            {{ skil }}{% endif %}</h2>
+                                        <h2 class="title"><span>Some task here</span> <span class="status"></span>{% if data.is_other_task %} /
+                                            {{ data.skill }}{% endif %}</h2>
                                         <h3 class="title">{{ data.point }} points</h3>
                                         <p class="desc">United States Holiday</p>
                                     </div>
@@ -42,18 +42,18 @@
                                     <tbody>
                                     <tr>
                                         {% if data.is_received_task %}
-                                            <td class="text-center">
+                                            <td class="text-center action-complete">
                                                 <span class="text-center">Complete</span>
                                             </td>
                                         {% elif data.is_my_task %}
-                                            <td class="text-center">
+                                            <td class="text-center action-accept">
                                                 <span class="text-center">Accept</span>
                                             </td>
-                                            <td class="text-center">
+                                            <td class="text-center action-reject">
                                                 <span class="text-center">Reject</span>
                                             </td>
                                         {% elif data.is_other_task %}
-                                            <td class="text-center">
+                                            <td class="text-center action-take">
                                                 <span class="text-center">Take Mission</span>
                                             </td>
                                         {% endif %}
