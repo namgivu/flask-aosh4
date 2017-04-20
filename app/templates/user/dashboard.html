@@ -4,6 +4,18 @@
 {% block leftHeader %}
   {% from 'leftHeader/_collapsed.html' import leftHeader_collapsed %}
   {{ leftHeader_collapsed() }}
+
+  {% from 'leftHeader/_expanded.html' import leftHeader_expanded %}
+  {{ leftHeader_expanded() }}
+
+  <style>
+  .expanded .collapsedLH {
+    display: none;
+  }
+  .expanded .expandedLH {
+    display: block;
+  }
+  </style>
 {% endblock %}
 
 
@@ -19,4 +31,18 @@
 
 
 {% block onReadyJs %}
+  <script>
+  $('.leftHeader').click(function(){
+    {#switching leftHeader content#}
+    $(this).toggleClass('expanded');
+
+    {#switching leftHeader width#}
+    $(this).toggleClass('col-xs-1');
+    $(this).toggleClass('col-xs-3');
+      {#main width also effected#}
+      $('.main').toggleClass('col-xs-9');
+      $('.main').toggleClass('col-xs-7');
+
+  })
+  </script>
 {% endblock %}
