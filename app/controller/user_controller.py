@@ -10,7 +10,7 @@ def user_switch_role():
 
 @app.route('/user/wallet')
 def user_wallet():
-  viewFile = userRole_to_viewFile(),
+  viewFile = userRole_to_viewFile()
   return render_template('user/wallet.html', **locals())
 
 
