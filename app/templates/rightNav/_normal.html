@@ -1,0 +1,17 @@
+{% macro rightNav_normal() %}
+  <div class="rightNav"></div>
+
+  <style>
+  .rightNav {
+    background-image: url('{{ url_for('static', filename='image/wireframe/rightNav.png') }}');
+    background-color: black;
+
+    height: 100%;
+    width: auto;
+    background-size: contain;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  </style>
+{% endmacro %}

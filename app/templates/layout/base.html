@@ -49,7 +49,8 @@
         {#nav on the right#}
         <div class="col col-xs-2">
           {% block rightNav %}
-            <div>rightNav content</div>
+            {% from 'rightNav/_normal.html' import rightNav_normal %}
+            {{ rightNav_normal() }}
           {% endblock %}
         </div>
       </div>
