@@ -2,14 +2,20 @@
 
 {% block main %}
   <div class="intro"></div>
+
   <style>
   .intro {
     background-image: url('{{ url_for('static', filename='image/wireframe/intro.jpg') }}');
-    height: 100%;
+    height: 80%;
     width: auto;
 
     background-repeat: no-repeat;
     background-position: center center;
+  }
+
+  {#hide menu & footer#}
+  .menu, .footerBottom {
+    display: none;
   }
   </style>
 {% endblock main %}
