@@ -35,7 +35,7 @@
         <div class="col col-xs-1 leftHeader">
           {% block leftHeader %}
             {#defautl content, let's overwrite this block in our own view#}
-            <div>leftHeader content</div>
+            <div>leftHeader</div>
           {% endblock %}
         </div>
 
@@ -51,31 +51,33 @@
         <div class="col col-xs-2 rightNav">
           {% block rightNav %}
             {#defautl content, let's overwrite this block in our own view#}
-              <div>rightNav content</div>
+            <div>rightNav</div>
           {% endblock %}
         </div>
       </div>
     </div>
 
-    {#format layout column#}
-    <style>
-      .col {
-        padding: 0;
-      }
+    {#region format layout column#}
+      <style>
+        .col {
+          padding: 0;
+        }
 
-{#        .layoutWrapper#}
-{#      , .layoutWrapper .col div#}
-{#      {#}
-{#        height: 100%;#}
-{#      }#}
-    </style>
+          .layoutWrapper
+        , .layoutWrapper .col
+        {
+          height: 100%;
+        }
+      </style>
+    {#endregion format layout column#}
 
 
     {#region js files at the end#}
-    <script src={{ url_for('static', filename='js/jquery-1.12.4-min.js') }}></script>
-    <script src={{ url_for('static', filename='js/common.js') }}></script>
-    <script src={{ url_for('static', filename='3rd-party/bootstrap-3.3.7-dist/js/bootstrap.min.js') }}></script>
-    {% block onReadyJs %}{% endblock %}
+      <script src={{ url_for('static', filename='js/jquery-1.12.4-min.js') }}></script>
+      <script src={{ url_for('static', filename='3rd-party/bootstrap-3.3.7-dist/js/bootstrap.min.js') }}></script>
+
+      {#page-specific js block#}
+      {% block onReadyJs %}{% endblock %}
     {#endregion js files at the end#}
 
   </body>

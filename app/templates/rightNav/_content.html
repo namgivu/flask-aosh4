@@ -1,0 +1,23 @@
+{% macro rightNav_normal(userRole) %}
+  <div class="bkgimg logo"></div>
+  <div class="userRole">{{ userRole }}</div>
+
+  <div class="bkgimg normalRN"></div>
+
+  <style>
+  .normalRN {
+    background-image: url('{{ url_for('static', filename='image/wireframe/rightNav.png') }}');
+    background-color: black;
+  }
+
+  .logo {
+    background-image: url('{{ url_for('static', filename='image/logo.png') }}');
+    height: 25px !important;
+  }
+
+  .userRole {
+    text-transform: uppercase;
+    text-align: center;
+  }
+  </style>
+{% endmacro %}

@@ -1,0 +1,19 @@
+{% macro leftHeader_content() %}
+  {% from 'leftHeader/_collapsed.html' import leftHeader_collapsed %}
+  {{ leftHeader_collapsed() }}
+
+  {% from 'leftHeader/_expanded.html' import leftHeader_expanded %}
+  {{ leftHeader_expanded() }}
+
+  <style>
+  .expanded .collapsedLH {
+    display: none;
+  }
+  .expanded .expandedLH {
+    display: block;
+  }
+  .expandedLH {
+    display: none;
+  }
+  </style>
+{% endmacro %}
