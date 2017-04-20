@@ -1,3 +1,262 @@
+@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+
 * {
-  border: 1px solid rgba(0,122,0,.5)
+    /*border: 1px solid rgba(0, 122, 0, .5)*/
+}
+
+.task-board-container {
+
+    background-color: #FAFAFA;
+    height: 100%;
+}
+
+.task-board-container .event-list {
+    list-style: none;
+    font-family: 'Lato', sans-serif;
+    margin: 0px;
+    padding: 15px 30px;
+}
+
+.task-board-container .event-list > li {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px rgb(51, 51, 51);
+    box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
+    padding: 0px;
+    margin: 0px 0px 20px;
+}
+
+.task-board-container .event-list > li time {
+    display: inline-block;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(197, 44, 102);
+    padding: 5px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.task-board-container .event-list > li:nth-child(even) > time {
+    background-color: rgb(165, 82, 167);
+}
+
+.task-board-container .event-list > li time span {
+    display: none;
+}
+
+.task-board-container .event-list > li time  .day {
+    display: block;
+    font-size: 56pt;
+    font-weight: 100;
+    line-height: 1;
+}
+
+.task-board-container .event-list > li time  .month {
+    display: block;
+    font-size: 24pt;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.task-board-container .event-list > li > img {
+    width: 100%;
+}
+
+.task-board-container .event-list > li > .info {
+    /*padding: 5px 0px;*/
+    text-align: center;
+}
+
+.task-board-container .event-list > li > .info .title {
+    font-size: 17pt;
+    font-weight: 700;
+    margin: 0px;
+}
+
+.task-board-container .event-list > li > .info .desc {
+    font-size: 13pt;
+    font-weight: 300;
+    margin: 0px;
+}
+
+.task-board-container .event-list > li > .info > ul,
+.task-board-container .event-list > li > .social > ul {
+    display: table;
+    list-style: none;
+    margin: 10px 0px 0px;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.task-board-container .event-list > li > .social > ul {
+    margin: 0px;
+}
+
+.task-board-container .event-list > li > .info > ul > li,
+.task-board-container .event-list > li > .social > ul > li {
+    display: table-cell;
+    cursor: pointer;
+    color: rgb(30, 30, 30);
+    font-size: 11pt;
+    font-weight: 300;
+    padding: 3px 0px;
+}
+
+.task-board-container .event-list > li > .info > ul > li > a {
+    display: block;
+    width: 100%;
+    color: rgb(30, 30, 30);
+    text-decoration: none;
+}
+
+.task-board-container .event-list > li > .info .title {
+    margin: 0px;
+}
+
+.task-board-container .event-list > li > .social > ul > li {
+    padding: 0px;
+}
+
+.task-board-container .event-list > li > .social > ul > li > a {
+    padding: 3px 0px;
+}
+
+.task-board-container .event-list > li > .info > ul > li:hover,
+.task-board-container .event-list > li > .social > ul > li:hover {
+    color: rgb(30, 30, 30);
+    background-color: rgb(200, 200, 200);
+}
+
+.facebook a,
+.twitter a,
+.google-plus a {
+    display: block;
+    width: 100%;
+    color: rgb(75, 110, 168) !important;
+}
+
+.twitter a {
+    color: rgb(79, 213, 248) !important;
+}
+
+.google-plus a {
+    color: rgb(221, 75, 57) !important;
+}
+
+.facebook:hover a {
+    color: rgb(255, 255, 255) !important;
+    background-color: rgb(75, 110, 168) !important;
+}
+
+.twitter:hover a {
+    color: rgb(255, 255, 255) !important;
+    background-color: rgb(79, 213, 248) !important;
+}
+
+.google-plus:hover a {
+    color: rgb(255, 255, 255) !important;
+    background-color: rgb(221, 75, 57) !important;
+}
+
+@media (min-width: 768px) {
+    .task-board-container .event-list > li {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 150px;
+        padding: 0px;
+    }
+
+    .task-board-container .event-list > li time,
+    .task-board-container .event-list > li > img {
+        display: inline-block;
+    }
+
+    .task-board-container .event-list > li time,
+    .task-board-container .event-list > li > img {
+        width: 150px;
+        float: left;
+    }
+
+    .task-board-container .event-list > li > .info {
+        background-color: rgb(245, 245, 245);
+        overflow: hidden;
+    }
+
+    .task-board-container .event-list > li time,
+    .task-board-container .event-list > li > img {
+        width: 150px;
+        height: 150px;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .task-board-container .event-list > li > .info {
+        position: relative;
+        height: 150px;
+        text-align: left;
+        /*padding-right: 40px;*/
+    }
+
+    .task-board-container .event-list > li > .info > .title,
+    .task-board-container .event-list > li > .info > .desc {
+        padding: 0px 10px;
+    }
+
+    .task-board-container .event-list > li > .info > ul {
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+    }
+
+    .task-board-container .event-list > li > .social {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        display: block;
+        width: 40px;
+    }
+
+    .task-board-container .event-list > li > .social > ul {
+        border-left: 1px solid rgb(230, 230, 230);
+    }
+
+    .task-board-container .event-list > li > .social > ul > li {
+        display: block;
+        padding: 0px;
+    }
+
+    .task-board-container .event-list > li > .social > ul > li > a {
+        display: block;
+        width: 40px;
+        padding: 10px 0px 9px;
+    }
+}
+
+img.circle {
+    border-radius: 100%;
+}
+
+.task-board-container .table.actions td {
+    padding: 5px 10px;
+    border-top: none;
+    background-color: #D8D8D8;
+}
+
+.task-board-container .table.actions td:hover {
+    opacity: 0.8;
+}
+
+.task-board-container .event-list .task-info {
+    height: 100%;
+    position: relative;
+}
+
+.task-board-container .event-list .task-info, .task-board-container .event-list .user-info {
+    padding: 10px;
+}
+
+.task-board-container .event-list .user-info .avatar img {
+width: 70px;
 }

@@ -63,16 +63,17 @@
         padding: 0;
       }
 
-        .layoutWrapper
-      , .layoutWrapper .col div
-      {
-        height: 100%;
-      }
+{#        .layoutWrapper#}
+{#      , .layoutWrapper .col div#}
+{#      {#}
+{#        height: 100%;#}
+{#      }#}
     </style>
 
 
     {#region js files at the end#}
     <script src={{ url_for('static', filename='js/jquery-1.12.4-min.js') }}></script>
+    <script src={{ url_for('static', filename='js/common.js') }}></script>
     <script src={{ url_for('static', filename='3rd-party/bootstrap-3.3.7-dist/js/bootstrap.min.js') }}></script>
     {% block onReadyJs %}{% endblock %}
     {#endregion js files at the end#}
