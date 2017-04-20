@@ -2,5 +2,12 @@
 
 {% block rightNav %}
   {% from 'rightNav/_content.html' import rightNav_normal %}
-  {{ rightNav_normal(userRole='giver') }}
+  {{ rightNav_normal(userRole=config['USER_ROLE']['giver'],
+                     userRoleREVERSED=config['USER_ROLE']['player']) }}
+{% endblock %}
+
+
+{% block onReadyJs %}
+  {{ super() }} {#calling parent's code of this block ref. http://stackoverflow.com/a/31093830/248616#}
+  {% include 'rightNav/_content.js.html' %}
 {% endblock %}

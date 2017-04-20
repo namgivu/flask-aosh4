@@ -1,13 +1,17 @@
-{% macro rightNav_normal(userRole) %}
+{% macro rightNav_normal(userRole, userRoleREVERSED) %}
   <div class="bkgimg logo"></div>
   <div class="userRole">{{ userRole }}</div>
+  <div class="button switchRole">Switch to {{ userRoleREVERSED }}</div>
 
   <div class="bkgimg normalRN"></div>
 
   <style>
+  .rightNav {
+    background-color: black;
+  }
+
   .normalRN {
     background-image: url('{{ url_for('static', filename='image/wireframe/rightNav.png') }}');
-    background-color: black;
   }
 
   .logo {
@@ -17,6 +21,10 @@
 
   .userRole {
     text-transform: uppercase;
+    text-align: center;
+  }
+
+  .button.switchRole {
     text-align: center;
   }
   </style>

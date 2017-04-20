@@ -91,7 +91,9 @@
 
 
 {% block onReadyJs %}
+  {#handle button clicking#}
   <script>
+
   $('.button.giver').click(function(){
     window.location.href = '{{ url_for('user_dashboard_giver') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
   });
@@ -114,6 +116,15 @@
 
   $('.button.missionBoard').click(function(){
     window.location.href = '{{ url_for('statistic_mission_board') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
+  });
+
+  </script>
+
+
+  {#logo clicked to open app index#}
+  <script>
+  $('.logo').click(function(){
+    window.location.href = '{{ url_for('app_index') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
   });
   </script>
 {% endblock %}
