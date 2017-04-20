@@ -1,14 +1,25 @@
 {#leftHeader toggle UI-logic#}
 <script>
-  $('.leftHeader').click(function(){
-  {#switching leftHeader content#}
-  $(this).toggleClass('expanded');
+  function uiLogicLH() {
+    {#switching leftHeader content#}
+    $('.leftHeader').toggleClass('expanded');
 
-  {#switching leftHeader width#}
-  $(this).toggleClass('col-xs-1');
-  $(this).toggleClass('col-xs-3');
-    {#main width also effected#}
-    $('.main').toggleClass('col-xs-9');
-    $('.main').toggleClass('col-xs-7');
-  })
+    {#switching leftHeader width#}
+    $('.leftHeader').toggleClass('col-xs-1');
+    $('.leftHeader').toggleClass('col-xs-3');
+      {#main width also effected#}
+      $('.main').toggleClass('col-xs-9');
+      $('.main').toggleClass('col-xs-7');
+      {#close button also effected#}
+      $('.closeButton').toggleClass('hidden');
+
+  }
+
+  $('.collapsedLH').click(function(){
+    uiLogicLH();
+  });
+
+  $('.closeButton').click(function(){
+    uiLogicLH();
+  });
 </script>
