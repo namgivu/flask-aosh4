@@ -1,17 +1,16 @@
 {% macro rightNav_normal() %}
-  <div class="normalRN"></div>
+  <div class="bkgimg logo"></div>
+  <div class="bkgimg normalRN"></div>
 
   <style>
   .normalRN {
     background-image: url('{{ url_for('static', filename='image/wireframe/rightNav.png') }}');
     background-color: black;
+  }
 
-    height: 100%;
-    width: auto;
-    background-size: contain;
-
-    background-repeat: no-repeat;
-    background-position: center center;
+  .logo {
+    background-image: url('{{ url_for('static', filename='image/logo.png') }}');
+    height: 25px !important;
   }
   </style>
 {% endmacro %}
