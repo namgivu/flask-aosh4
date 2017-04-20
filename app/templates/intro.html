@@ -1,0 +1,16 @@
+{% extends 'layout/base.html' %}
+
+{% block main %}
+  <div class="intro"></div>
+  <style>
+  .intro {
+    background-image: url('{{ url_for('static', filename='image/wireframe/intro.jpg') }}');
+    height: 100%;
+    width: auto;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  </style>
+{% endblock main %}
+
