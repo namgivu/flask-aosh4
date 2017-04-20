@@ -1,0 +1,6 @@
+{#logo clicked to open app index#}
+<script>
+  $('.logo').click(function(){
+    window.location.href = '{{ url_for('app_index') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
+  });
+</script>
