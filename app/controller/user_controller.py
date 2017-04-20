@@ -1,4 +1,5 @@
 from app import *
+from flask import session
 
 
 @app.route('/user/switch-role')
@@ -8,11 +9,13 @@ def user_switch_role():
 
 @app.route('/user/dashboard-player')
 def user_dashboard_player():
+  session['userRole'] = app.config['USER_ROLE']['player']
   return render_template('user/dashboard-player.html')
 
 
 @app.route('/user/dashboard-giver')
 def user_dashboard_giver():
+  session['userRole'] = app.config['USER_ROLE']['giver']
   return render_template('user/dashboard-giver.html')
 
 
