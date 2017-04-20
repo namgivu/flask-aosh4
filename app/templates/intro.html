@@ -20,3 +20,12 @@
   </style>
 {% endblock main %}
 
+
+{% block onReadyJs %}
+  <script>
+  $('.intro').click(function() {
+    {#redirect to login page#}
+    window.location.href = '{{ url_for('auth_sign_in') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
+  });
+  </script>
+{% endblock %}
