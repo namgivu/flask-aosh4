@@ -31,8 +31,10 @@
   <body>
     <div class="container layoutWrapper">
       <div class="row">
+        {% set emptyTaskClass = 'emptyTask' if session['emptyTask'] else '' %}
+
         {#header on the left#}
-        <div class="col col-xs-1 leftHeader">
+        <div class="col col-xs-1 leftHeader {{ emptyTaskClass }}">
           {% block leftHeader %}
             {#defautl content, let's overwrite this block in our own view#}
             <div>leftHeader</div>
@@ -40,7 +42,7 @@
         </div>
 
         {#main in the middle#}
-        <div class="col col-xs-9 main">
+        <div class="col col-xs-9 main {{ emptyTaskClass }}">
           {% block main %}
             {#defautl content, let's overwrite this block in our own view#}
             <div>main content</div>
@@ -48,7 +50,7 @@
         </div>
 
         {#nav on the right#}
-        <div class="col col-xs-2 rightNav">
+        <div class="col col-xs-2 rightNav {{ emptyTaskClass }}">
           {% block rightNav %}
             {#defautl content, let's overwrite this block in our own view#}
             <div>rightNav</div>

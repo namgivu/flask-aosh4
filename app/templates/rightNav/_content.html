@@ -1,23 +1,41 @@
 {% macro rightNav_normal(userRole, userRoleREVERSED, hiddenWhenGiver) %}
-  <div class="bkgimg logo"></div>
-  <div class="userRole">{{ userRole }}</div>
-  <div class="button switchRole">Switch to {{ userRoleREVERSED }}</div>
+  <div class="normalRN {{ 'hidden' if session['emptyTask'] else '' }}">
+    <div class="bkgimg logo"></div>
+    <div class="userRole">{{ userRole }}</div>
+    <div class="button switchRole">Switch to {{ userRoleREVERSED }}</div>
 
-  <div class="navButton myBoard">My Board</div>
-  <div class="navButton missionBoard">Mission Board</div>
-  <div class="navButton leadingBoard">Leading Board</div>
-  <div class="navButton help">Help</div>
-  <div class="navButton wallet {{ hiddenWhenGiver }}">Wallet</div>
-  <div class="navButton signOut">sign out</div>
+    <div class="navButton myBoard">My Board</div>
+    <div class="navButton missionBoard">Mission Board</div>
+    <div class="navButton leadingBoard">Leading Board</div>
+    <div class="navButton help">Help</div>
+    <div class="navButton wallet {{ hiddenWhenGiver }}">Wallet</div>
+    <div class="navButton signOut">sign out</div>
 
-  <div class="bkgimg normalRN hidden"></div>
+    <div class="bkgimg normalRN_wireframe hidden"></div>
+  </div>
+
+  <div class="expandedRN {{ 'hidden' if not session['emptyTask'] else '' }}">
+    <div class="bkgimg logo"></div>
+    <div class="userRole">{{ userRole }}</div>
+    <div class="headLine">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt eros nec felis consectetur, sit amet suscipit neque bibendum. Mauris vestibulum ac diam vel lacinia. </div>
+    <div class="button switchRole">Switch to {{ userRoleREVERSED }}</div>
+
+    <div class="navButton myBoard">My Board</div>
+    <div class="navButton missionBoard">Mission Board</div>
+    <div class="navButton leadingBoard">Leading Board</div>
+    <div class="navButton help">Help</div>
+    <div class="navButton wallet {{ hiddenWhenGiver }}">Wallet</div>
+    <div class="navButton signOut">sign out</div>
+
+    <div class="bkgimg normalRN_wireframe hidden"></div>
+  </div>
 
   <style>
   .rightNav {
     background-color: black;
   }
 
-  .normalRN {
+  .normalRN_wireframe {
     background-image: url('{{ url_for('static', filename='image/wireframe/rightNav.png') }}');
   }
 
@@ -33,6 +51,19 @@
 
   .button, .navButton {
     text-align: center;
+  }
+  </style>
+
+  {#resizing when emptyTask#}
+  <style>
+  .rightNav.emptyTask {
+    width: 30%;
+  }
+  .main.emptyTask {
+    width: 60%;
+  }
+  .leftHeader.emptyTask {
+    width: 10%;
   }
   </style>
 {% endmacro %}

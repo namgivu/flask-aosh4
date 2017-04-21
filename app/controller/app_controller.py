@@ -21,3 +21,8 @@ def app_index_default():
 def app_intro():
   return render_template('intro.html')
 
+
+@app.before_first_request
+def init_emptyTaskList_session():
+  session['emptyTask'] = True
+  
