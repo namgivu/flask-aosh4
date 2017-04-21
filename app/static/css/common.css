@@ -320,13 +320,12 @@ img.circle {
 }
 
 .wallet-container {
-background-color: #030303;
     padding: 20px;
 }
 
 .wallet-container .my-point {
     padding: 10px 20px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     border-radius: 50px;
     background-color: #242424;
     color: #c016b4;
@@ -347,6 +346,7 @@ border: none;
     width: 15%;
     padding-bottom: 15%; /* = width for a 1:1 aspect ratio */
     margin-right:1.66%;
+    margin-bottom: 1.66%;
     overflow:hidden;
 }
 

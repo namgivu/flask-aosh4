@@ -11,7 +11,7 @@
                 <div class="wallet-item">
                     <div class="content">
                         <div class="item">
-                            <img src="{{ url_for('static',filename='image/reward-iphone.png') }}" />
+                            <img src="{{ url_for('static',filename=('image/reward-iphone.png') if data.id % 2 == 0 else 'image/reward-bikini.png') }}" />
                         </div>
                     </div>
                 </div>

@@ -13,7 +13,7 @@ def user_wallet():
   template = userRole_to_dashboardView()
   fake_data = []
   my_point = 2000
-  for i in range(5):
+  for i in range(10):
     data = {
       'id': i + 1
     }
