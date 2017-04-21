@@ -15,7 +15,6 @@
 
   <div class="actionWrapper">
     <div class="bkgimg navButton button help"></div>
-    <div class="bkgimg navButton button profile">Profile</div>
     <div class="bkgimg navButton button leadingBoard">Leader Board</div>
     <div class="bkgimg navButton button missionBoard">Task Feed</div>
     <div class="navLink button signOut">sign out</div>
@@ -160,11 +159,11 @@
   });
 
   $('.button.leadingBoard').click(function(){
-    window.location.href = '{{ url_for('statistic_leading_board') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
+    window.location.href = '{{ url_for('user_leader_board') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
   });
 
   $('.button.missionBoard').click(function(){
-    window.location.href = '{{ url_for('statistic_mission_board') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
+    window.location.href = '{{ url_for('user_player_mission_board') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
   });
 
   </script>
