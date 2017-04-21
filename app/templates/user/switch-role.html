@@ -6,18 +6,19 @@
   <div class="logoBELOW"></div>
 
   <div class="switchWrapper">
-    <div class="button giver">Giver</div>
+    <div class="bkgimg button giver"></div>
     <div class="or">or</div>
-    <div class="button player">Player</div>
+    <div class="bkgimg button player"></div>
   </div>
 
   <div class="switchWrapperBELOW"></div>
 
   <div class="actionWrapper">
-    <div class="button help">Help</div>
-    <div class="button leadingBoard">Leading Board</div>
-    <div class="button missionBoard">Mission Board</div>
-    <div class="button signOut">sign out</div>
+    <div class="bkgimg navButton button help"></div>
+    <div class="bkgimg navButton button profile">Profile</div>
+    <div class="bkgimg navButton button leadingBoard">Leader Board</div>
+    <div class="bkgimg navButton button missionBoard">Task Feed</div>
+    <div class="navLink button signOut">sign out</div>
   </div>
 
   <div class="bkgimg wireframe hidden"></div>
@@ -73,6 +74,7 @@
   .actionWrapper .button {
     width: 15%;
     min-width: 40px;
+    font-size: 1.8rem;
   }
   </style>
 
@@ -84,6 +86,53 @@
   }
   .switchWrapperBELOW {
     height: 5rem;
+  }
+  </style>
+
+
+  {#graphics#}
+  <style>
+  .navButton {
+    background-image: url('{{ url_for('static', filename='image/lmr-rightNav/btn-normal.png') }}');
+    height: 50px;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    font-size: 2rem;
+    color: #BDFF1D;
+    padding-top: 1rem;
+
+    text-transform: uppercase;
+  }
+
+  .navLink {
+    color: rgba(255,255,255,.8);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-size: 1.5rem !important;
+  }
+
+  .help {
+    background-image: url('{{ url_for('static', filename='image/lmr-rightNav/help.png') }}');
+    height: 39px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .or {
+    font-size: 3rem;
+  }
+
+  .button.giver {
+    background-image: url('{{ url_for('static', filename='image/intro/userRole-owner.png') }}');
+    width: 491px;
+    height: 192px;
+  }
+  .button.player {
+    background-image: url('{{ url_for('static', filename='image/intro/userRole-hunter.png') }}');
+    width: 506px;
+    height: 192px;
   }
   </style>
 
