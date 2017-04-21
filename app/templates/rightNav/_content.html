@@ -1,4 +1,4 @@
-{% macro rightNav_normal(userRole, userRoleREVERSED) %}
+{% macro rightNav_normal(userRole, userRoleREVERSED, hiddenWhenGiver) %}
   <div class="bkgimg logo"></div>
   <div class="userRole">{{ userRole }}</div>
   <div class="button switchRole">Switch to {{ userRoleREVERSED }}</div>
@@ -7,7 +7,8 @@
   <div class="navButton missionBoard">Mission Board</div>
   <div class="navButton leadingBoard">Leading Board</div>
   <div class="navButton help">Help</div>
-  <div class="navButton wallet">Wallet</div>
+  <div class="navButton wallet {{ hiddenWhenGiver }}">Wallet</div>
+  <div class="navButton signOut">sign out</div>
 
   <div class="bkgimg normalRN hidden"></div>
 
