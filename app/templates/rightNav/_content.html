@@ -1,31 +1,34 @@
 {% macro rightNav_normal(userRole, userRoleREVERSED, hiddenWhenGiver) %}
   <div class="normalRN {{ 'hidden' if session['emptyTask'] else '' }}">
     <div class="bkgimg logo"></div>
-    <div class="userRole">{{ userRole }}</div>
-    <div class="button switchRole">Switch to {{ userRoleREVERSED }}</div>
+    <div class="bkgimg userRole"></div>
+    <div class="userName">ave_69</div>
+    <div class="navLink switchRole">Switch to {{ userRoleREVERSED }}</div>
 
-    <div class="navButton myBoard">My Board</div>
-    <div class="navButton missionBoard">Mission Board</div>
-    <div class="navButton leadingBoard">Leading Board</div>
-    <div class="navButton help">Help</div>
-    <div class="navButton wallet {{ hiddenWhenGiver }}">Wallet</div>
-    <div class="navButton signOut">sign out</div>
+    <div class="navButton myBoard">Profile</div>
+    <div class="navButton wallet {{ hiddenWhenGiver }}">My Wallet</div>
+    <div class="navButton leadingBoard">Leader Board</div>
+    <div class="navButton missionBoard">Task Feed</div>
+    <div class="navButton help"></div>
+    <div class="navLink signOut">sign out</div>
 
-    <div class="bkgimg normalRN_wireframe hidden"></div>
+    <div class="navLink bkgimg normalRN_wireframe hidden"></div>
   </div>
 
   <div class="expandedRN {{ 'hidden' if not session['emptyTask'] else '' }}">
     <div class="bkgimg logo"></div>
     <div class="userRole">{{ userRole }}</div>
     <div class="headLine">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt eros nec felis consectetur, sit amet suscipit neque bibendum. Mauris vestibulum ac diam vel lacinia. </div>
-    <div class="button switchRole">Switch to {{ userRoleREVERSED }}</div>
+    <div class="navLink switchRole">Switch to {{ userRoleREVERSED }}</div>
 
-    <div class="navButton myBoard">My Board</div>
-    <div class="navButton missionBoard">Mission Board</div>
-    <div class="navButton leadingBoard">Leading Board</div>
-    <div class="navButton help">Help</div>
-    <div class="navButton wallet {{ hiddenWhenGiver }}">Wallet</div>
-    <div class="navButton signOut">sign out</div>
+    <div class="bkgimg navButton myBoard">Profile</div>
+    <div class="bkgimg navButton wallet {{ hiddenWhenGiver }}">My Wallet</div>
+    <div class="bkgimg navButton leadingBoard">Leader Board</div>
+    <div class="bkgimg navButton missionBoard">Task Feed</div>
+
+    <div class="bkgimg navButton help">Help</div>
+
+    <div class="navLink signOut">sign out</div>
 
     <div class="bkgimg normalRN_wireframe hidden"></div>
   </div>
@@ -47,10 +50,44 @@
   .userRole {
     text-transform: uppercase;
     text-align: center;
+
+    {% set biFilename = 'image/rightNav/userRole-%s.png' % userRole %}
+    background-image: url('{{ url_for('static', filename=biFilename) }}');
+    height: 35px;
   }
 
-  .button, .navButton {
+  .navLink, .navButton, .userName {
     text-align: center;
+  }
+
+  .userName {
+    color: #BDFF1D;
+    font-size: 3rem;
+  }
+
+  .navLink {
+    color: rgba(255,255,255,.8);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+  }
+
+  .navButton {
+    background-image: url('{{ url_for('static', filename='image/rightNav/btn-normal.png') }}');
+    height: 50px;
+
+    font-size: 2rem;
+    color: #BDFF1D;
+    padding-top: 1rem;
+
+    text-transform: uppercase;
+  }
+
+  .help {
+    background-image: url('{{ url_for('static', filename='image/rightNav/help.png') }}');
+    height: 39px;
+    background-repeat: no-repeat;
+    background-position: center center;
   }
   </style>
 
