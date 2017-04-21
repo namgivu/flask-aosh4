@@ -1,0 +1,9 @@
+@font-face {
+  font-family:'Gilroy';
+  src:url('../font/Gilroy-Light.otf');
+}
+
+body {
+  font-family: 'Gilroy';
+  color: rgba(255,255,255,.8);
+}

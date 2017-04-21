@@ -2,14 +2,67 @@
 
 {% block main %}
   <div>On-going Task</div>
-  <div class="bkgimg ogip"></div>
+
+  <div class="row">
+    <div class="col-xs-6">Player name</div>
+    <div class="col-xs-6">Point</div>
+  </div>
+
+  <div class="ogiItems">
+    <div class="line">
+      <div class="bkgimg ogiItem"></div>
+      <div class="sep"></div>
+      <div class="bkgimg ogiItem"></div>
+      <div class="sep"></div>
+      <div class="bkgimg ogiItem"></div>
+      <div class="sep"></div>
+      <div class="bkgimg ogiItem"></div>
+    </div>
+
+    <div class="line">
+      <div class="bkgimg ogiItem"></div>
+      <div class="sep"></div>
+      <div class="bkgimg ogiItem"></div>
+      <div class="sep"></div>
+      <div class="bkgimg ogiItem"></div>
+    </div>
+  </div>
   <style>
-  .ogip {
+  .line div {
+    display: inline-block;
+  }
+  .sep {
+    width: 1rem;
+  }
+
+  .ogiItem {
+    background-image: url('{{ url_for('static', filename='image/wireframe/all-on-going-item.png') }}');
+    height: 60px;
+    width: 22%;
+  }
+  </style>
+
+  <div class="action backBtn">back</div>
+
+  <div class="bkgimg ogipWireframe hidden"></div>
+  <style>
+  .ogipWireframe {
     background-image: url('{{ url_for('static', filename='image/wireframe/on-going-item-page.png') }}');
   }
   </style>
 {% endblock main %}
 
-
 {% block onReadyJs %}
+  <script>
+  {#bck button clicked#}
+  $('.backBtn').click(function(){
+    window.history.back();
+  });
+
+  {#a task clicked#}
+  $('.ogiItem').click(function(){
+    alert('Task details go here');
+  });
+
+  </script>
 {% endblock onReadyJs %}

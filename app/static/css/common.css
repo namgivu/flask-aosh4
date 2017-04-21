@@ -2,7 +2,7 @@
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
 
 * {
-    border: 1px solid rgba(0, 122, 0, .5)
+  *border: 1px solid rgba(0,122,0,.5)
 }
 
 .bkgimg {
@@ -14,6 +14,21 @@
     background-position: center center;
 }
 
+/*region horizontal spacing */
+.hozSpacing01 {
+  height: 2rem;
+}
+
+.hozSpacing02 {
+  height: 4rem;
+}
+
+.hozSpacing03 {
+  height: 6rem;
+}
+/*endregion horizontal spacing */
+
+/*region Hoai's css*/
 .task-board-container {
 
     background-color: #030303;
@@ -356,3 +371,4 @@ border: none;
     max-height: 100%;
 
 }
+/*endregion Hoai's css*/

@@ -10,6 +10,7 @@
 
     {#region css files#}
     <link rel='stylesheet' type='text/css' href='{{ url_for('static', filename='3rd-party/bootstrap-3.3.7-dist/css/bootstrap.css') }}'/>
+    <link rel='stylesheet' type='text/css' href='{{ url_for('static', filename='css/font.css') }}'/>
     <link rel='stylesheet' type='text/css' href='{{ url_for('static', filename='css/common.css') }}'/>
     {#endregion css files#}
 
@@ -31,8 +32,10 @@
   <body>
     <div class="container layoutWrapper">
       <div class="row">
+        {% set emptyTaskClass = 'emptyTask' if session['emptyTask'] else '' %}
+
         {#header on the left#}
-        <div class="col col-xs-1 leftHeader">
+        <div class="col col-xs-1 leftHeader {{ emptyTaskClass }}">
           {% block leftHeader %}
             {#defautl content, let's overwrite this block in our own view#}
             <div>leftHeader</div>
@@ -40,19 +43,23 @@
         </div>
 
         {#main in the middle#}
-        <div class="col col-xs-9 main">
-          {% block main %}
-            {#defautl content, let's overwrite this block in our own view#}
-            <div>main content</div>
-          {% endblock %}
+        <div class="col col-xs-8 main {{ emptyTaskClass }}">
+          <div class="bkgimg bgImage">
+            {% block main %}
+              {#defautl content, let's overwrite this block in our own view#}
+              <div>main content</div>
+            {% endblock %}
+          </div>
         </div>
 
         {#nav on the right#}
-        <div class="col col-xs-2 rightNav">
-          {% block rightNav %}
-            {#defautl content, let's overwrite this block in our own view#}
-            <div>rightNav</div>
-          {% endblock %}
+        <div class="col col-xs-3 rightNav {{ emptyTaskClass }}">
+          <div class="bkgimg bgImage">
+            {% block rightNav %}
+              {#defautl content, let's overwrite this block in our own view#}
+              <div>rightNav</div>
+            {% endblock %}
+          </div>
         </div>
       </div>
     </div>
@@ -67,6 +74,22 @@
         , .layoutWrapper .col
         {
           height: 100%;
+        }
+      </style>
+
+      <style>
+        .main .bgImage {
+          background-image: url('{{ url_for('static', filename='image/lmr-main/bkg.png') }}');
+          height: 100%;
+          width: auto;
+          background-repeat: repeat;
+        }
+
+        .rightNav .bgImage {
+          background-image: url('{{ url_for('static', filename='image/lmr-rightNav/bg.png') }}');
+          height: 100%;
+          width: auto;
+          background-repeat: repeat;
         }
       </style>
     {#endregion format layout column#}

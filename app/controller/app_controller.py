@@ -21,3 +21,8 @@ def app_index_default():
 def app_intro():
   return render_template('intro.html')
 
+
+@app.before_first_request
+def init_emptyTaskList_session():
+  session['emptyTask'] = True
+  session['emptyTask'] = False #TODO temporary set it False; turn it back on when this todo is coded "TODO place a button to remove emptyTask in session" ref. app/templates/user/dashboard.html:10
