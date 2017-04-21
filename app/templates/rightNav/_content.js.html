@@ -38,4 +38,8 @@
   $('.navButton.wallet').click(function(){
     window.location.href = '{{ url_for('user_wallet') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
   });
+
+  $('.navButton.signOut').click(function(){
+    window.location.href = '{{ url_for('auth_sign_out') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
+  });
 </script>
