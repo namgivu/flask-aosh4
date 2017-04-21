@@ -1,15 +1,33 @@
 {% macro rightNav_normal(userRole, userRoleREVERSED, hiddenWhenGiver) %}
   <div class="normalRN {{ 'hidden' if session['emptyTask'] else '' }}">
+    <div class="hozSpacing03"></div>
     <div class="bkgimg logo"></div>
+    <div class="hozSpacing03"></div>
+
     <div class="bkgimg userRole"></div>
+    <div class="hozSpacing02"></div>
+
     <div class="userName">ave_69</div>
+    <div class="hozSpacing02"></div>
+
     <div class="navLink switchRole">Switch to {{ userRoleREVERSED }}</div>
+    <div class="hozSpacing02"></div>
 
     <div class="navButton myBoard">Profile</div>
+    <div class="hozSpacing01"></div>
+
     <div class="navButton wallet {{ hiddenWhenGiver }}">My Wallet</div>
+    <div class="hozSpacing01"></div>
+
     <div class="navButton leadingBoard">Leader Board</div>
+    <div class="hozSpacing01"></div>
+
     <div class="navButton missionBoard">Task Feed</div>
+
+    <div class="hozSpacing02"></div>
     <div class="navButton help"></div>
+    <div class="hozSpacing01"></div>
+
     <div class="navLink signOut">sign out</div>
 
     <div class="navLink bkgimg normalRN_wireframe hidden"></div>

@@ -14,6 +14,21 @@
   background-position: center center;
 }
 
+
+.hozSpacing01 {
+  height: 2rem;
+}
+
+.hozSpacing02 {
+  height: 4rem;
+}
+
+.hozSpacing03 {
+  height: 6rem;
+}
+
+
+/*region Hoai's css*/
 .task-board-container {
 
     background-color: #FAFAFA;
@@ -291,3 +306,4 @@ img.circle {
     padding-bottom: 33.333333%;
     background-color: #CCC;
 }
+/*endregion Hoai's css*/
