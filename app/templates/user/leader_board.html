@@ -1,15 +1,13 @@
 {% extends viewFile %}
 
 {% block main %}
-    <table class="table table-striped table-hover">
-        <tbody>
+    <div class="leader-board-container">
         {% for data in fake_data %}
-            <tr>
-                <td>#{{ data.rank }}</td>
-                <td>{{ data.name }}</td>
-                <td>{{ data.point }} points</td>
-            </tr>
+        <div class="row board-item">
+            <span class="col-sm-2 rank">#{{ data.rank }}</span>
+            <span class="col-sm-8 name">{{ data.name }}</span>
+            <span class="col-sm-2 point">{{ data.point }} points</span>
+        </div>
         {% endfor %}
-        </tbody>
-    </table>
+    </div>
 {% endblock main %}

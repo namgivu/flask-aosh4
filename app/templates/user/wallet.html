@@ -1,5 +1,11 @@
 {% extends viewFile %}
 
 {% block main %}
-  <div>User Wallet/Shopping page</div>
+  <div class="wallet-container">
+    {% for data in fake_data %}
+        <div class="wallet-item col-md-4">
+            Item {{ data.id }}
+        </div>
+    {% endfor %}
+  </div>
 {% endblock main %}

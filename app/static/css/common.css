@@ -269,3 +269,25 @@ img.circle {
 .task-board-container .event-list .user-info .avatar img {
     width: 70px;
 }
+
+.leader-board-container {
+    background-color: #030303;
+}
+
+.leader-board-container .board-item {
+    margin: 10px 20px;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #242424;
+    color: #d6d6d6;
+    font-size: 16px;
+}
+
+.leader-board-container .board-item .rank {
+    padding-left: 30px;
+}
+
+.wallet-container .wallet-item {
+    padding-bottom: 33.333333%;
+    background-color: #CCC;
+}

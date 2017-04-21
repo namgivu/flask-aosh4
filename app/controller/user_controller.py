@@ -11,6 +11,12 @@ def user_switch_role():
 @app.route('/user/wallet')
 def user_wallet():
   viewFile = userRole_to_viewFile()
+  fake_data = []
+  for i in range(5):
+    data = {
+      'id': i + 1
+    }
+    fake_data.append(data)
   return render_template('user/wallet.html', **locals())
 
 
