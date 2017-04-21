@@ -21,7 +21,3 @@ from util import *
 
 #route handler/controller
 from controller import *
-
-#set session secret key
-app.secret_key = 'HumGfpMS4Mx3QSXk'
-app.config['SESSION_TYPE'] = 'filesystem'

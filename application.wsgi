@@ -5,4 +5,9 @@ APP_HOME = os.path.abspath( os.path.dirname(__file__) )
 sys.path.insert(0, APP_HOME)
 #endregion register app home path
 
+#the app creation
 from app import app as application
+
+#set session secret key
+application.secret_key = 'HumGfpMS4Mx3QSXk'
+application.config['SESSION_TYPE'] = 'filesystem'
