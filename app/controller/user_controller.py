@@ -10,7 +10,7 @@ def user_switch_role():
 
 @app.route('/user/wallet')
 def user_wallet():
-  viewFile = userRole_to_viewFile()
+  template = userRole_to_dashboardView()
   fake_data = []
   for i in range(5):
     data = {
@@ -29,7 +29,7 @@ def user_dashboard_player():
 @app.route('/user/player/my-board')
 def user_player_my_board():
   session['userRole'] = app.config['USER_ROLE']['player']
-  viewFile = userRole_to_viewFile()
+  template = userRole_to_dashboardView()
   days = range(1, 30)
   months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
   names = ['Anonymous']
@@ -58,7 +58,7 @@ def user_player_my_board():
 @app.route('/user/player/mission-board')
 def user_player_mission_board():
   session['userRole'] = app.config['USER_ROLE']['player']
-  viewFile = userRole_to_viewFile()
+  template = userRole_to_dashboardView()
   days = range(1, 30)
   months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
   names = ['Anonymous']
@@ -84,7 +84,7 @@ def user_player_mission_board():
 
 @app.route('/user/leader-board')
 def user_leader_board():
-  viewFile = userRole_to_viewFile()
+  template = userRole_to_dashboardView()
   chars = "abcdefghjiklmnopqrstw"
   names = []
   for i in range(5):
@@ -110,7 +110,7 @@ def user_dashboard_giver():
 @app.route("/user/giver/my-board")
 def user_giver_my_board():
   session['userRole'] = app.config['USER_ROLE']['giver']
-  viewFile = userRole_to_viewFile()
+  template = userRole_to_dashboardView()
   role = 'giver'
   not_show_avatar = True
   days = range(1, 30)

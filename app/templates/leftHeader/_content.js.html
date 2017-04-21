@@ -11,7 +11,7 @@
       $('.main').toggleClass('col-xs-9');
       $('.main').toggleClass('col-xs-7');
       {#close button also effected#}
-      $('.closeButton').toggleClass('hidden');
+      $('.action').toggleClass('hidden');
       $('.task,.taskId').toggleClass('hidden');
 
   }
@@ -20,7 +20,15 @@
     uiLogicLH();
   });
 
-  $('.closeButton').click(function(){
+  $('.closeBtn').click(function(){
     uiLogicLH();
+  });
+</script>
+
+
+{#show all clicked#}
+<script>
+  $('.allBtn').click(function(){
+    window.location.href = '{{ url_for('statistic_all_on_going') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
   });
 </script>

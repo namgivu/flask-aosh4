@@ -3,11 +3,25 @@ from app import *
 
 @app.route('/statistic/leading-board')
 def statistic_leading_board():
-  viewFile=userRole_to_viewFile()
+  template=userRole_to_dashboardView()
   return render_template('statistic/leading-board.html', **locals() )
 
 
 @app.route('/statistic/mission-board')
 def statistic_mission_board():
-  viewFile=userRole_to_viewFile()
+  template=userRole_to_dashboardView()
   return render_template('statistic/mission-board.html', **locals() )
+
+
+@app.route('/statistic/all-on-going')
+def statistic_all_on_going():
+  template=userRole_to_dashboardView()
+  userRole = currentUserRole()
+  return render_template('statistic/all-on-going.html', **locals() )
+
+
+@app.route('/statistic/on-going-item')
+def statistic_on_going_item():
+  template=userRole_to_dashboardView()
+  userRole = currentUserRole()
+  return render_template('statistic/on-going-item.html', **locals() )

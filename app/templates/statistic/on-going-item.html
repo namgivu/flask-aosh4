@@ -1,0 +1,15 @@
+{% extends template %}
+
+{% block main %}
+  <div>On-going Task</div>
+  <div class="bkgimg ogip"></div>
+  <style>
+  .ogip {
+    background-image: url('{{ url_for('static', filename='image/wireframe/on-going-item-page.png') }}');
+  }
+  </style>
+{% endblock main %}
+
+
+{% block onReadyJs %}
+{% endblock onReadyJs %}
