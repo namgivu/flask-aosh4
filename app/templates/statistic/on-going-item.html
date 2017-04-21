@@ -52,11 +52,17 @@
   </style>
 {% endblock main %}
 
-
 {% block onReadyJs %}
   <script>
+  {#bck button clicked#}
   $('.backBtn').click(function(){
     window.history.back();
   });
+
+  {#a task clicked#}
+  $('.ogiItem').click(function(){
+    alert('Task details go here');
+  });
+
   </script>
 {% endblock onReadyJs %}
