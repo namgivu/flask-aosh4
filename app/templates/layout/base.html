@@ -44,10 +44,12 @@
 
         {#main in the middle#}
         <div class="col col-xs-8 main {{ emptyTaskClass }}">
-          {% block main %}
-            {#defautl content, let's overwrite this block in our own view#}
-            <div>main content</div>
-          {% endblock %}
+          <div class="bkgimg bgImage">
+            {% block main %}
+              {#defautl content, let's overwrite this block in our own view#}
+              <div>main content</div>
+            {% endblock %}
+          </div>
         </div>
 
         {#nav on the right#}
@@ -70,6 +72,15 @@
         , .layoutWrapper .col
         {
           height: 100%;
+        }
+      </style>
+
+      <style>
+        .main .bgImage {
+          background-image: url('{{ url_for('static', filename='image/lmr-main/bkg.png') }}');
+          height: 100%;
+          width: auto;
+          background-repeat: repeat;
         }
       </style>
     {#endregion format layout column#}
