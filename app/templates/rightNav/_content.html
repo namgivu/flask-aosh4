@@ -57,7 +57,7 @@
   }
 
   .normalRN_wireframe {
-    background-image: url('{{ url_for('static', filename='image/wireframe/rightNav.png') }}');
+    background-image: url('{{ url_for('static', filename='image/wireframe/lmr-rightNav.png') }}');
   }
 
   .logo {
@@ -69,7 +69,7 @@
     text-transform: uppercase;
     text-align: center;
 
-    {% set biFilename = 'image/rightNav/userRole-%s.png' % userRole %}
+    {% set biFilename = 'image/lmr-rightNav/userRole-%s.png' % userRole %}
     background-image: url('{{ url_for('static', filename=biFilename) }}');
     height: 35px;
   }
@@ -91,7 +91,7 @@
   }
 
   .navButton {
-    background-image: url('{{ url_for('static', filename='image/rightNav/btn-normal.png') }}');
+    background-image: url('{{ url_for('static', filename='image/lmr-rightNav/btn-normal.png') }}');
     height: 50px;
     background-repeat: no-repeat;
     background-position: center center;
@@ -104,7 +104,7 @@
   }
 
   .help {
-    background-image: url('{{ url_for('static', filename='image/rightNav/help.png') }}');
+    background-image: url('{{ url_for('static', filename='image/lmr-rightNav/help.png') }}');
     height: 39px;
     background-repeat: no-repeat;
     background-position: center center;
