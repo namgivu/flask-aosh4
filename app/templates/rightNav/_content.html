@@ -69,7 +69,7 @@
     text-transform: uppercase;
     text-align: center;
 
-    {% set biFilename = 'image/lmr-rightNav/userRole-%s.png' % userRole %}
+    {% set biFilename = 'image/lmr-rightNav/userRole-%s.png' %  'player' if userRole == config['USER_ROLE']['player'] else 'giver' %}
     background-image: url('{{ url_for('static', filename=biFilename) }}');
     height: 35px;
   }

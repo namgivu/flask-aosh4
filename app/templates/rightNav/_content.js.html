@@ -7,9 +7,9 @@
 
 {#switch role clicked handler#}
 <script>
-  $('.button.switchRole').click(function(){
+  $('.navLink.switchRole').click(function(){
     {% set userRole = session['userRole'] if 'userRole' in session else config['USER_ROLE']['player'] %}
-    {% set userRoleREVERSED = config['USER_ROLE']['player'] if userRole == config['USER_ROLE']['giver'] else config['USER_ROLE']['giver'] %}
+    {% set userRoleREVERSED = 'player' if userRole == config['USER_ROLE']['giver'] else 'giver' %}
     {% set viewFile = 'user_dashboard_%s' % userRoleREVERSED %}
     window.location.href = '{{ url_for(viewFile) }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
   });
@@ -39,7 +39,7 @@
     window.location.href = '{{ url_for('user_wallet') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
   });
 
-  $('.navButton.signOut').click(function(){
+  $('.navLink.signOut').click(function(){
     window.location.href = '{{ url_for('auth_sign_out') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
   });
 </script>
