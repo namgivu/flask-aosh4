@@ -20,7 +20,7 @@
                                 <div class="task-info col-md-{% print '12' if not_show_avatar else '10' %}">
                                     <div>
                                         <h2 class="title">
-                                            <span>Some task here</span>
+                                            <span>Title</span>
                                             <span class="status">
                                                 {% if data.completed %}
                                                     {% if role == 'giver' %}
@@ -33,7 +33,7 @@
                                             {% if data.is_other_task %} /
                                                 {{ data.skill }}{% endif %}</h2>
                                         <h3 style="margin: 0px"><span class="point">{{ data.point }}</span> points</h3>
-                                        <p class="desc">United States Holiday</p>
+                                        <p class="desc">Description</p>
                                     </div>
                                 </div>
                                 {% if not not_show_avatar %}
@@ -68,7 +68,7 @@
                                                 </td>
                                             {% elif data.is_other_task %}
                                                 <td class="text-center action-take">
-                                                    <span class="text-center">Take Mission</span>
+                                                    <span class="text-center">Take Task</span>
                                                 </td>
                                             {% elif data.is_setting %}
                                                 <td class="text-center action-setting">
