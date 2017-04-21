@@ -3,7 +3,7 @@
 {% block main %}
     <div class="leader-board-container">
         {% for data in fake_data %}
-        <div class="row board-item">
+        <div class="row board-item {% print 'top' if data.rank < 4 %}">
             <span class="col-sm-2 rank">#{{ data.rank }}</span>
             <span class="col-sm-8 name">{{ data.name }}</span>
             <span class="col-sm-2 point">{{ data.point }} points</span>

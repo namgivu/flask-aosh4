@@ -2,10 +2,15 @@
 
 {% block main %}
   <div class="wallet-container">
+  <div class="row my-point">
+      <span class="col-sm-6">Point</span>
+      <span class="col-sm-6 text-right">{{ my_point }}</span>
+  </div>
+  <div class="row">
     {% for data in fake_data %}
         <div class="wallet-item col-md-4">
             Item {{ data.id }}
         </div>
-    {% endfor %}
+    {% endfor %}</div>
   </div>
 {% endblock main %}
