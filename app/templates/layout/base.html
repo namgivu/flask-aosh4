@@ -54,10 +54,12 @@
 
         {#nav on the right#}
         <div class="col col-xs-3 rightNav {{ emptyTaskClass }}">
-          {% block rightNav %}
-            {#defautl content, let's overwrite this block in our own view#}
-            <div>rightNav</div>
-          {% endblock %}
+          <div class="bkgimg bgImage">
+            {% block rightNav %}
+              {#defautl content, let's overwrite this block in our own view#}
+              <div>rightNav</div>
+            {% endblock %}
+          </div>
         </div>
       </div>
     </div>
@@ -78,6 +80,13 @@
       <style>
         .main .bgImage {
           background-image: url('{{ url_for('static', filename='image/lmr-main/bkg.png') }}');
+          height: 100%;
+          width: auto;
+          background-repeat: repeat;
+        }
+
+        .rightNav .bgImage {
+          background-image: url('{{ url_for('static', filename='image/lmr-rightNav/bg.png') }}');
           height: 100%;
           width: auto;
           background-repeat: repeat;
