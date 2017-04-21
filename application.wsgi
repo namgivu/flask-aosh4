@@ -7,7 +7,3 @@ sys.path.insert(0, APP_HOME)
 
 #the app creation
 from app import app as application
-
-#set session secret key
-application.secret_key = 'HumGfpMS4Mx3QSXk'
-application.config['SESSION_TYPE'] = 'filesystem'
