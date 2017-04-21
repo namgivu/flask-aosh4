@@ -1,6 +1,6 @@
 {% macro leftHeader_content() %}
-  <div class="hidden action allBtn">view all</div>
-  <div class="hidden action closeBtn">close</div>
+  <div class="hidden navLink action allBtn">view all</div>
+  <div class="hidden navLink action closeBtn">close</div>
   <div style="clear: both"></div>
 
   <style>
@@ -43,6 +43,16 @@
 
   .leftHeader.expanded {
     width: 15%;
+  }
+
+  .navLink {
+    color: rgba(255,255,255,.8);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+
+    font-size: 1.1rem;
+    padding: 5px 0px;
   }
   </style>
 {% endmacro %}
