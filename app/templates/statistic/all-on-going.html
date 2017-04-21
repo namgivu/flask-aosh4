@@ -2,4 +2,40 @@
 
 {% block main %}
   <div>All On-going Task</div>
+
+  <div class="lineWrapper">
+    <div class="line">
+      <div class="bkgimg aogItem"></div>
+      <div class="sep"></div>
+      <div class="bkgimg aogItem"></div>
+    </div>
+
+    <div class="line">
+      <div class="bkgimg aogItem"></div>
+      <div class="sep"></div>
+      <div class="bkgimg aogItem"></div>
+    </div>
+
+    <div class="line">
+      <div class="bkgimg aogItem"></div>
+      <div class="sep"></div>
+      <div class="bkgimg aogItem"></div>
+    </div>
+
+  </div>
+
+  <style>
+  .line div {
+    display: inline-block;
+  }
+  .sep {
+    width: 1rem;
+  }
+
+  .aogItem {
+    background-image: url('{{ url_for('static', filename='image/wireframe/all-on-going-item.png') }}');
+    height: 203px;
+    width: 45%;
+  }
+  </style>
 {% endblock main %}
