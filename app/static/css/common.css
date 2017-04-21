@@ -14,7 +14,7 @@
   background-position: center center;
 }
 
-
+/*region horizontal spacing */
 .hozSpacing01 {
   height: 2rem;
 }
@@ -26,7 +26,7 @@
 .hozSpacing03 {
   height: 6rem;
 }
-
+/*endregion horizontal spacing */
 
 /*region Hoai's css*/
 .task-board-container {
