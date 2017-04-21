@@ -1,4 +1,4 @@
-{% extends 'user/dashboard-player.html' %}
+{% extends viewFile %}
 
 {% block main %}
     <div class="task-board-container">
@@ -17,49 +17,68 @@
                             </time>
                             {#                    <img alt="Independence Day" src="https://farm4.staticflickr.com/3100/2693171833_3545fb852c_q.jpg"/>#}
                             <div class="info">
-                                <div class="task-info col-md-10">
+                                <div class="task-info col-md-{% print '12' if not_show_avatar else '10' %}">
                                     <div>
-                                        <h2 class="title"><span>Some task here</span> <span class="status"></span>{% if data.is_other_task %} /
-                                            {{ data.skill }}{% endif %}</h2>
-                                        <h3 class="title">{{ data.point }} points</h3>
+                                        <h2 class="title">
+                                            <span>Some task here</span>
+                                            <span class="status">
+                                                {% if data.completed %}
+                                                    {% if role == 'giver' %}
+                                                        Player did this
+                                                    {% else %}
+                                                        Completed
+                                                    {% endif %}
+                                                {% endif %}
+                                            </span>
+                                            {% if data.is_other_task %} /
+                                                {{ data.skill }}{% endif %}</h2>
+                                        <h3 style="margin: 0px"><span class="point">{{ data.point }}</span> points</h3>
                                         <p class="desc">United States Holiday</p>
                                     </div>
                                 </div>
-                                <div class="col-md-2 user-info text-right">
-                                    <div class="pull-right text-center">
-                                        <div class="avatar">
-                                            <img class="circle img-thumbnail img-box"
-                                                 src="{{ url_for('static', filename='image/andy.jpg') }}"
-                                                 alt="sintret">
+                                {% if not not_show_avatar %}
+                                    <div class="col-md-2 user-info text-right">
+                                        <div class="pull-right text-center">
+                                            <div class="avatar">
+                                                <img class="circle img-thumbnail img-box"
+                                                     src="{{ url_for('static', filename='image/andy.jpg') }}"
+                                                     alt="sintret">
+                                            </div>
+                                            <div class="name">{{ data.name }}</div>
                                         </div>
-                                        <div class="name">{{ data.name }}</div>
                                     </div>
-                                </div>
+                                {% endif %}
                                 <div class="clearfix"></div>
 
-                                <table class="table actions table-bordered"
-                                       style="position:absolute; bottom: 0; margin: 0px;">
-                                    <tbody>
-                                    <tr>
-                                        {% if data.is_received_task %}
-                                            <td class="text-center action-complete">
-                                                <span class="text-center">Complete</span>
-                                            </td>
-                                        {% elif data.is_my_task %}
-                                            <td class="text-center action-accept">
-                                                <span class="text-center">Accept</span>
-                                            </td>
-                                            <td class="text-center action-reject">
-                                                <span class="text-center">Reject</span>
-                                            </td>
-                                        {% elif data.is_other_task %}
-                                            <td class="text-center action-take">
-                                                <span class="text-center">Take Mission</span>
-                                            </td>
-                                        {% endif %}
-                                    </tr>
-                                    </tbody>
-                                </table>
+                                {% if not data.completed %}
+                                    <table class="table actions table-bordered"
+                                           style="position:absolute; bottom: 0; margin: 0px;">
+                                        <tbody>
+                                        <tr>
+                                            {% if data.is_received_task %}
+                                                <td class="text-center action-complete">
+                                                    <span class="text-center">Complete</span>
+                                                </td>
+                                            {% elif data.is_my_task %}
+                                                <td class="text-center action-accept">
+                                                    <span class="text-center">Accept</span>
+                                                </td>
+                                                <td class="text-center action-reject">
+                                                    <span class="text-center">Reject</span>
+                                                </td>
+                                            {% elif data.is_other_task %}
+                                                <td class="text-center action-take">
+                                                    <span class="text-center">Take Mission</span>
+                                                </td>
+                                            {% elif data.is_setting %}
+                                                <td class="text-center action-setting">
+                                                    <span class="text-center">Setting</span>
+                                                </td>
+                                            {% endif %}
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                {% endif %}
                             </div>
                         </li>
                     {% endfor %}
@@ -149,6 +168,20 @@
                     {#                    </div>#}
                     {#                </li>#}
                 </ul>
+            </div>
+        </div>
+        <div id="completePopup" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+
+                        <h1>Mission Completed</h1>
+                        <h1>You earned <span class="point"></span> points</h1>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
