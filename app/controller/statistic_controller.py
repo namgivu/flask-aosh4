@@ -18,3 +18,10 @@ def statistic_all_on_going():
   template=userRole_to_dashboardView()
   userRole = currentUserRole()
   return render_template('statistic/all-on-going.html', **locals() )
+
+
+@app.route('/statistic/on-going-item')
+def statistic_on_going_item():
+  template=userRole_to_dashboardView()
+  userRole = currentUserRole()
+  return render_template('statistic/on-going-item.html', **locals() )

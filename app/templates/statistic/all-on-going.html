@@ -39,3 +39,12 @@
   }
   </style>
 {% endblock main %}
+
+
+{% block onReadyJs %}
+  <script>
+  $('.aogItem').click(function(){
+    window.location.href = '{{ url_for('statistic_on_going_item') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
+  });
+  </script>
+{% endblock onReadyJs %}
