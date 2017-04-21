@@ -1,13 +1,26 @@
 {% macro leftHeader_content() %}
-  <div class="hidden closeButton">close</div>
+  <div class="hidden action allBtn">view all</div>
+  <div class="hidden action closeBtn">close</div>
+  <div style="clear: both"></div>
+
   <style>
+  .line00 div {
+    display: inline-block;
+  }
   .leftHeader {
     background-color: black;
   }
-  .closeButton {
+  .action.closeBtn, .action.allBtn {
     color: grey;
-    text-align: right;
+    width: 40%;
     padding-right: 1rem;
+  }
+  .action.closeBtn {
+    text-align: right;
+    float: right;
+  }
+  .action.allBtn {
+    float: left;
   }
   </style>
 
