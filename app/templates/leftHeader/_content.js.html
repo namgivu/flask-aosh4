@@ -24,3 +24,11 @@
     uiLogicLH();
   });
 </script>
+
+
+{#show all clicked#}
+<script>
+  $('.allBtn').click(function(){
+    window.location.href = '{{ url_for('statistic_all_on_going') }}'; {#ref. http://stackoverflow.com/a/506004/248616#}
+  });
+</script>
